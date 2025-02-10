@@ -296,10 +296,22 @@ def main():
         print("  No matching files found.")
 
     df_all = pd.read_excel(latest_file)
+    # exclude 2 x discontinued products and embroidery skus
+    exclude_variant_ids = [
+        41793140031561,
+        41793140064329,
+        41801882992713,
+        41801883189321,
+        41801883222089,
+        41806941028425,
+        41807630139465,
+        41807630172233,
+    ]
     df_all = df_all[
         (
             (df_all["Status"].str.lower() != "archived")
             & (df_all["Vendor"] == "Chef Works")
+            & (~df_all["Variant ID"].isin(exclude_variant_ids))
         )
     ]  # Filter out archived rows
     df_all_first_few = df_all.head(20)
