@@ -14,7 +14,6 @@ def main():
     """transform excel file into another csv file"""
     # set for the get wo size function
     KNOWN_SIZES = {  # pylint: disable=invalid-name
-        "0",
         "26",
         "28",
         "30",
