@@ -307,11 +307,12 @@ def main():
     ]
     df_all = df_all[
         (
-            (df_all["Status"].str.lower() != "archived")
+            ~df_all["Status"].str.lower().isin(["archived", "draft"])
             & (df_all["Vendor"] == "Chef Works")
             & (~df_all["Variant ID"].isin(exclude_variant_ids))
+            & (df_all["Title"] != "Shipping recharge")
         )
-    ]  # Filter out archived rows
+    ]
     df_all_first_few = df_all.head(20)
 
     # Create a URL df
