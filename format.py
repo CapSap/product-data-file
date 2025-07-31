@@ -267,9 +267,8 @@ def main():
                 text_format = workbook.add_format({"num_format": "@"})
 
                 # Apply text format to specific columns
-                worksheet.set_column("A:A", None, text_format)  # Column A (ID)
-                # Column I (Variant Barcode)
-                worksheet.set_column("I:I", None, text_format)
+                # Column (Variant Barcode)
+                worksheet.set_column("G:G", None, text_format)
             pbar.update(1)
 
         # Display completion message
