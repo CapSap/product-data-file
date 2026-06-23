@@ -145,6 +145,9 @@ def main():
             "Variant Weight Unit",
             "Variant Price",
             "image_alt",
+            "Variant Metafield: custom.number_of_pockets [single_line_text_field]",
+            "Variant Metafield: custom.closure [single_line_text_field]",
+            "Variant Metafield: custom.sleeve_length [single_line_text_field]"
         ]
 
         # Identify dynamically generated URL columns
@@ -233,6 +236,9 @@ def main():
                     "Option2 Value": "Size",
                     "Variant Price": "RRP Price",
                     "Variant SKU": "Product SKU",
+                    "Variant Metafield: custom.number_of_pockets [single_line_text_field]": "Number of Pockets",
+                    "Variant Metafield: custom.closure [single_line_text_field]": "Closure",
+                    "Variant Metafield: custom.sleeve_length [single_line_text_field]": "Sleeve Length"
                 },
                 inplace=True,
             )
